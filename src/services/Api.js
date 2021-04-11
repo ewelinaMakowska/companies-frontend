@@ -27,7 +27,7 @@ if(process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'testing' 
 
   instance =
   axios.create({
-    baseURL: `https://companies-app-backend.herokuapp.com:80`
+    baseURL: `http://companies-app-backend.herokuapp.com:80`
   })
   
 } else if (process.env.NODE_ENV === 'production') {
