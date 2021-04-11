@@ -15,10 +15,19 @@ if(store.getters.token) {
   token = store.getters.token.replace(/['"]+/g, '');
 }
 
-const instance =
+if(process.env.NODE_ENV === 'production' || !process.env.NODE_ENV) {
+  const instance =
+  axios.create({
+    baseURL: `https://companies-app-backend.herokuapp.com:80`
+  })
+} else {
+  const instance =
   axios.create({
     baseURL: `${process.env.PROTOCOL}://${process.env.HOST}:${process.env.PORT}`
   })
+}
+
+
 
 if(token) {
   Object.assign(instance.defaults, {headers: {Authorization: `Bearer ${token}`}});
