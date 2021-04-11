@@ -18,11 +18,13 @@ if(store.getters.token) {
 let instance;
 
 if(process.env.NODE_ENV === 'development' || process.env.NODE_ENV === 'testing' || !process.env.NODE_ENV) {
+  console.log('ello dev/testing')
+
   instance =
   axios.create({
     baseURL: `${process.env.PROTOCOL}://${process.env.HOST}:${process.env.PORT}`
   })
-} else {
+} else if (process.env.NODE_ENV === 'production') {
   console.log('ello')
 
   instance =
