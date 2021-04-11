@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=production webpack --config build/webpack.config.dev node server",
+    "postinstall": "NODE_ENV=production webpack --config build/webpack.config.dev",
+    "start": "node server.js",
     "serve": "vue-cli-service serve",
     "build": "NODE_ENV=production webpack --config build/webpack.config.dev.js",
     "dev": "NODE_ENV=development webpack-dev-server --config build/webpack.config.dev.js",
@@ -46,6 +47,7 @@
     "html-webpack-plugin": "^4.5.0",
     "sass": "^1.19.0",
     "sass-loader": "^8.0.0",
+    "serve-static": "^1.14.1",
     "style-loader": "^1.2.1",
     "vue": "^2.6.12",
     "vue-jest": "^3.0.7",
