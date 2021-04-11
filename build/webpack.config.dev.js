@@ -4,10 +4,7 @@ const webpack = require('webpack')
 const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 require("babel-polyfill");
-
-if (process.env.NODE_ENV !== 'production') { 
-  const Dotenv = require('dotenv-webpack');
-}
+const Dotenv = require('dotenv-webpack');
 
 let envPath;
 
