@@ -5,6 +5,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 require("babel-polyfill");
 const Dotenv = require('dotenv-webpack');
+const CopyPlugin = require("copy-webpack-plugin");
 
 let envPath;
 
@@ -77,6 +78,11 @@ module.exports = {
       filename: 'index.html',
       template: 'index.html',
       inject: true
-    })
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "assets", to: "dist" },
+      ],
+    }),
   ],
 }
