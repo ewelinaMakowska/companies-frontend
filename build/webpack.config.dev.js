@@ -81,7 +81,7 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: "assets", to: "" },
+        { from: "assets", to: "assets" },
       ],
     }),
   ],
